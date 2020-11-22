@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ROLES, StudentModel} from '../../model/student.model';
 import {ValidatorService} from '../../service/validator.service';
 import {StudentService} from '../../service/student.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   roles = ROLES;
 
-  constructor(private studentService: StudentService, private validatorService: ValidatorService) {
+  constructor(private studentService: StudentService, private validatorService: ValidatorService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -41,7 +42,10 @@ export class RegisterComponent implements OnInit {
       password: this.registerForm.value.passwords.password
     };
     this.studentService.register(studentModel).subscribe(
-      value => console.log(value),
+      value => {
+        console.log(value);
+        this.router.navigate(['login']);
+      },
       error => console.log(error)
     );
   }

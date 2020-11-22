@@ -11,7 +11,7 @@ export class BasicAuthService implements HttpInterceptor{
   constructor(private loginManager: LoginManagerService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (this.loginManager.credential !== null){
+    if (this.loginManager.studentModel && this.loginManager.credential){
       const httpHeader: HttpHeaders = new HttpHeaders({
         Authorization: this.loginManager.credential
       });
