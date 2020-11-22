@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/w3-css/w3.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AngularHttpBasic"
+    }
+  },
+  "defaultProject": "AngularHttpBasic",
+  "cli": {
+    "analytics": "784aa642-80e5-4a36-a9ec-7836503b4a75"
+  }
 }

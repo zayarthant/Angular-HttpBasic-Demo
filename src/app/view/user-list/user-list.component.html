@@ -1,0 +1,17 @@
+<h3 class="w3-center">User List</h3>
+<table class="w3-table w3-striped w3-border">
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Role</th>
+  </tr>
+  <tr *ngFor="let student of students">
+    <td>{{student.name}}</td>
+    <td>{{student.email}}</td>
+    <td>{{student.phone}}</td>
+    <td>{{student.address}}</td>
+    <td>{{student.role}}</td>
+  </tr>
+</table>

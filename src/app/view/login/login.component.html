@@ -1,0 +1,14 @@
+<h1 class="w3-container w3-center">
+  Login
+</h1>
+<form [formGroup]="loginForm" (ngSubmit)="summit()">
+  <p>
+    <input type="text" class="w3-input w3-border" placeholder="email" formControlName="email"/>
+  </p>
+  <p>
+    <input type="password" autocomplete="on" class="w3-input w3-border" placeholder="password" formControlName="password"/>
+  </p>
+  <p class="w3-center">
+    <button [disabled]="loginForm.invalid" type="submit" class="w3-button w3-green"> Login </button>
+  </p>
+</form>
